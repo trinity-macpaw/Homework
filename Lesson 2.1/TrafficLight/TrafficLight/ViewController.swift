@@ -30,8 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         changeState(to: .off)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupUI()
     }
     
     // MARK: - IB Actions
@@ -52,9 +57,9 @@ class ViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupUI() {
-        redLightView.layer.cornerRadius = 60
-        yellowLightView.layer.cornerRadius = 60
-        greenLightView.layer.cornerRadius = 60
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
     }
     
     private func changeState(to state: TrafficLightState) {
