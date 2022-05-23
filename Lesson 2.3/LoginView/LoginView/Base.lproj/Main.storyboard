@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oN7-BN-psm">
-                                <rect key="frame" x="164" y="192" width="86.5" height="41"/>
+                                <rect key="frame" x="163.5" y="192" width="87" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
@@ -107,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wow-uI-jTF">
-                                <rect key="frame" x="166" y="642" width="82" height="41"/>
+                                <rect key="frame" x="166" y="718.5" width="82" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -120,12 +120,12 @@
                         <viewLayoutGuide key="safeArea" id="b0C-ze-nye"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
-                            <constraint firstItem="b0C-ze-nye" firstAttribute="bottom" secondItem="wow-uI-jTF" secondAttribute="bottom" constant="179" id="DdI-ho-uJS"/>
                             <constraint firstItem="pzA-Cl-372" firstAttribute="centerX" secondItem="IgZ-RT-Ypw" secondAttribute="centerX" id="MWs-Sf-QFS"/>
+                            <constraint firstItem="wow-uI-jTF" firstAttribute="centerX" secondItem="IgZ-RT-Ypw" secondAttribute="centerX" id="SSy-cc-2Th"/>
                             <constraint firstItem="oN7-BN-psm" firstAttribute="top" secondItem="b0C-ze-nye" secondAttribute="top" constant="148" id="d8S-tb-Rpb"/>
-                            <constraint firstItem="wow-uI-jTF" firstAttribute="centerX" secondItem="IgZ-RT-Ypw" secondAttribute="centerX" id="dCm-Ze-Li4"/>
                             <constraint firstItem="pzA-Cl-372" firstAttribute="top" secondItem="oN7-BN-psm" secondAttribute="bottom" constant="44" id="o8Y-jf-BdJ"/>
                             <constraint firstItem="oN7-BN-psm" firstAttribute="centerX" secondItem="IgZ-RT-Ypw" secondAttribute="centerX" id="ovf-uI-876"/>
+                            <constraint firstItem="wow-uI-jTF" firstAttribute="centerY" secondItem="IgZ-RT-Ypw" secondAttribute="centerY" multiplier="1.65" id="qRA-6T-6r3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ADg-5O-c4M"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IB Outlets
     @IBOutlet var userNameTF: UITextField!
@@ -20,24 +20,28 @@ class LoginViewController: UIViewController {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         userNameTF.autocorrectionType = .no
         userNameTF.spellCheckingType = .no
+        userNameTF.delegate = self
+        userNameTF.returnKeyType = .next
         
         passwordTF.isSecureTextEntry = true
+        passwordTF.delegate = self
+        passwordTF.returnKeyType = .done
+        passwordTF.enablesReturnKeyAutomatically = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
         view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        
         welcomeVC.userName = userNameTF.text
     }
-
-    
     
     // MARK: - IB Actions
     @IBAction func forgotUserNameTapped() {
@@ -56,12 +60,24 @@ class LoginViewController: UIViewController {
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
             )
+            passwordTF.text = nil
         }
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTF.text = nil
         passwordTF.text = nil
+    }
+    
+    // MARK: - UITextFieldDelegate Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else if textField == passwordTF {
+            logInButtonTapped()
+        }
+        
+        return true
     }
     
     // MARK: - Private Methods
