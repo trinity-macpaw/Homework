@@ -39,6 +39,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		375D2264284F5E8100E88557 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				37A1330D283806B400EB5175 /* Main.storyboard */,
+				37A13312283806B500EB5175 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		375D2265284F5ECC00E88557 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				37A1330B283806B400EB5175 /* LoginViewController.swift */,
+				37CC7844283AC55100FDEB5A /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		375D2266284F5EDB00E88557 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37A13310283806B500EB5175 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		375D2267284F5EF800E88557 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				37A13307283806B400EB5175 /* AppDelegate.swift */,
+				37A13309283806B400EB5175 /* SceneDelegate.swift */,
+				37A13315283806B500EB5175 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3774C893284F5FB60038AD00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		37A132FB283806B400EB5175 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +101,11 @@
 		37A13306283806B400EB5175 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				37A13307283806B400EB5175 /* AppDelegate.swift */,
-				37A13309283806B400EB5175 /* SceneDelegate.swift */,
-				37A1330B283806B400EB5175 /* LoginViewController.swift */,
-				37A1330D283806B400EB5175 /* Main.storyboard */,
-				37CC7844283AC55100FDEB5A /* WelcomeViewController.swift */,
-				37A13310283806B500EB5175 /* Assets.xcassets */,
-				37A13312283806B500EB5175 /* LaunchScreen.storyboard */,
-				37A13315283806B500EB5175 /* Info.plist */,
+				3774C893284F5FB60038AD00 /* Models */,
+				375D2265284F5ECC00E88557 /* ViewControllers */,
+				375D2264284F5E8100E88557 /* Storyboards */,
+				375D2267284F5EF800E88557 /* App */,
+				375D2266284F5EDB00E88557 /* Resources */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -293,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C4NV47RSX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginView/Info.plist;
+				INFOPLIST_FILE = LoginView/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +362,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C4NV47RSX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginView/Info.plist;
+				INFOPLIST_FILE = LoginView/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
