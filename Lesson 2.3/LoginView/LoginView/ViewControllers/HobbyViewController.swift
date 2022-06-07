@@ -9,21 +9,18 @@ import UIKit
 
 class HobbyViewController: UIViewController {
 
+    // MARK: - IB Outlets
+    @IBOutlet var hobbyLabel: UILabel!
+    
+    // MARK: - Public Properties
+    var hobbies: [String]?
+    
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        hobbyLabel.text = hobbies?
+            .map { item in "• \(item)" }
+            .joined(separator: "\n")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
