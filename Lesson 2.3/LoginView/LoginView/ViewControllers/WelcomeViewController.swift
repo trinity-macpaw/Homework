@@ -13,12 +13,16 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     
     // MARK: - Public Properties
-    var userName: String?
+    var user: User?
     
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabel.text = "Welcome " + (userName ?? "Unknown user")
+        if let user = user {
+            welcomeLabel.text = "Welcome, \(user.person.name) \(user.person.surname)"
+        } else {
+            welcomeLabel.text = "Welcome, Unknown user"
+        }
     }
 }

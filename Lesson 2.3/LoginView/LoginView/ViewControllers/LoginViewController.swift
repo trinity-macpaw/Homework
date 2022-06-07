@@ -14,8 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTF: UITextField!
     
     // MARK: - Private Properties
-    private let userName = "User"
-    private let password = "1234"
+    private let user = User.getUser()
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -39,22 +38,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userNameTF.text
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let tabBarViewControllers = tabBarVC.viewControllers else { return }
+        
+        for viewController in tabBarViewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = viewController as? UINavigationController {
+                if let aboutMeVC = navigationVC.viewControllers.first as? AboutMeViewController {
+                    aboutMeVC.person = user.person
+                }
+            }
+        }
     }
     
     // MARK: - IB Actions
     @IBAction func forgotUserNameTapped() {
-        showAlert(title: "Oops!", message: "Your name is \(userName) 🤩")
+        showAlert(title: "Oops!", message: "Your name is \(user.userName) 🤩")
     }
     
     @IBAction func forgotPasswordTapped() {
-        showAlert(title: "Oops!", message: "Your password is \(password) 🤫")
+        showAlert(title: "Oops!", message: "Your password is \(user.password) 🤫")
     }
     
     @IBAction func logInButtonTapped() {
-        if userNameTF.text == userName && passwordTF.text == password {
-            performSegue(withIdentifier: "goToWelcome", sender: nil)
+        if userNameTF.text == user.userName && passwordTF.text == user.password {
+            performSegue(withIdentifier: "goToMain", sender: nil)
         } else {
             showAlert(
                 title: "Invalid login or password",
