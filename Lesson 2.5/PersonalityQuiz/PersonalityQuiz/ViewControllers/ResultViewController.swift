@@ -32,7 +32,16 @@ class ResultViewController: UIViewController {
     }
     
     private func defineAnimal(answers: [Answer]?) -> Animal? {
-        guard let answers = answers else { return nil}
+        guard let answers = answers else { return nil }
+        
+        var frequencyOfAnimals: [Animal: Int] = [:]
+        let animals = answers.map { $0.animal }
+        
+        for animal in animals {
+            let animalCount = frequencyOfAnimals[animal] ?? 0
+            frequencyOfAnimals[animal] = animalCount + 1
+        }
+        
         
         var dog = 0
         var cat = 0
