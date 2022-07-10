@@ -80,7 +80,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Delegate Methods
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard
-            let text = textField.text,
+            let text = textField.text?.replacingOccurrences(of: ",", with: "."),
             let number = Float(text),
             number >= 0 && number <= 1
         else {
@@ -130,8 +130,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         let keypadToolbar = UIToolbar()
         keypadToolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: .done, target: textField, action: #selector(UITextField.resignFirstResponder))
+            UIBarButtonItem(
+                barButtonSystemItem: .flexibleSpace,
+                target: nil,
+                action: nil
+            ),
+            UIBarButtonItem(
+                barButtonSystemItem: .done,
+                target: textField,
+                action: #selector(UITextField.resignFirstResponder)
+            )
         ]
         
         keypadToolbar.sizeToFit()
