@@ -1,5 +1,5 @@
 //
-//  PersonsListsTableViewController.swift
+//  PersonPlainTableViewController.swift
 //  Persons
 //
 //  Created by trinity on 10.07.2022.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PersonsListsTableViewController: UITableViewController {
+class PersonPlainTableViewController: UITableViewController {
     
-    private var contacts = Person.getRandomPersons()
+    private var contacts = DataManager.contacts
     
     override func viewDidLoad() {
         super.viewDidLoad()
